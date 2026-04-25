@@ -419,6 +419,13 @@ Decision de enfoque vigente:
 - la implementacion continuara sin API de dominio,
 - la siguiente capa principal sera Filament v4.
 
+Avance adicional ya ejecutado:
+
+- policies del dominio alineadas a permisos,
+- estructura base de Resources de Filament v4,
+- formularios y tablas iniciales de los cinco modulos principales,
+- integracion inicial de Media Library en federaciones y equipos.
+
 Las siguientes capas pendientes naturales son:
 
 - validaciones formales,

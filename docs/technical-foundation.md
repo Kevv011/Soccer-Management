@@ -154,6 +154,30 @@ La prioridad de implementacion queda definida asi:
 
 Por tanto, la siguiente capa funcional del proyecto debe construirse directamente sobre Filament.
 
+### 5.6 Modulos Filament ya estructurados
+
+Se encuentra creada la estructura base de modulos administrativos en Filament v4 para:
+
+- Countries
+- Subdivisions
+- Federations
+- Teams
+- Players
+
+Cada modulo ya cuenta con base inicial de:
+
+- `Resource`
+- `Schemas`
+- `Tables`
+- paginas `List`, `Create` y `Edit`
+- policies alineadas a permisos
+
+Adicionalmente:
+
+- `FederationResource` integra `logo` mediante Media Library
+- `TeamResource` integra `crest` mediante Media Library
+- `PlayerResource` usa `gender` controlado por enum
+
 ## 6. Skills y lineamientos internos del proyecto
 
 La carpeta `.agents/skills` refleja que el proyecto esta orientado a un desarrollo estructurado y con enfoque de calidad.

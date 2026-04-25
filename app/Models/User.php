@@ -74,6 +74,6 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasMedia
 
     public function canAccessPanel(Panel $panel): bool
     {
-        return filled($this->email_verified_at) && $this->can('panel.access');
+        return filled($this->email_verified_at) && $this->can(\App\Enums\PermissionName::PanelAccess->value);
     }
 }

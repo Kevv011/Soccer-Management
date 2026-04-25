@@ -56,7 +56,7 @@ class AppServiceProvider extends ServiceProvider
         );
 
         Gate::before(function ($user, string $ability): ?bool {
-            return $user->hasRole(RoleName::SuperAdmin) ? true : null;
+            return $user->hasRole(RoleName::SuperAdmin->value) ? true : null;
         });
     }
 }
