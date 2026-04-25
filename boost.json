@@ -1,0 +1,24 @@
+{
+    "agents": [
+        "codex"
+    ],
+    "guidelines": true,
+    "mcp": true,
+    "nightwatch_mcp": false,
+    "packages": [
+        "filament/filament",
+        "spatie/laravel-medialibrary",
+        "spatie/laravel-permission",
+        "spatie/laravel-query-builder",
+        "spatie/laravel-activitylog"
+    ],
+    "sail": true,
+    "skills": [
+        "laravel-best-practices",
+        "mcp-development",
+        "tailwindcss-development",
+        "medialibrary-development",
+        "laravel-permission-development",
+        "laravel-query-builder"
+    ]
+}
