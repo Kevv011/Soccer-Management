@@ -20,11 +20,14 @@ class DatabaseSeeder extends Seeder
             RolesAndPermissionsSeeder::class,
         ]);
 
-        $adminUser = User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $adminUser = User::query()->updateOrCreate([
+            'email' => 'admin@admin.com',
+        ], [
+            'name' => 'Admin',
+            'password' => 'password',
+            'email_verified_at' => now(),
         ]);
 
-        $adminUser->assignRole(RoleName::SuperAdmin);
+        $adminUser->syncRoles([RoleName::SuperAdmin->value]);
     }
 }

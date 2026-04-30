@@ -27,13 +27,15 @@ class CountryForm
                                 ->maxLength(2)
                                 ->minLength(2)
                                 ->unique(ignoreRecord: true)
-                                ->uppercase(),
+                                ->formatStateUsing(fn(?string $state): ?string => $state ? strtoupper($state) : null)
+                                ->dehydrateStateUsing(fn(?string $state): ?string => $state ? strtoupper($state) : null),
                             TextInput::make('iso3')
                                 ->required()
                                 ->maxLength(3)
                                 ->minLength(3)
                                 ->unique(ignoreRecord: true)
-                                ->uppercase(),
+                                ->formatStateUsing(fn(?string $state): ?string => $state ? strtoupper($state) : null)
+                                ->dehydrateStateUsing(fn(?string $state): ?string => $state ? strtoupper($state) : null),
                         ]),
                 ]),
         ]);

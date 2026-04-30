@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'geography_import' => [
+        'countries_url' => env('GEOGRAPHY_IMPORT_COUNTRIES_URL', 'https://admatik.app/api/countries-noauth'),
+        'subdivisions_url' => env('GEOGRAPHY_IMPORT_SUBDIVISIONS_URL', 'https://admatik.app/api/subdivisions-noauth'),
+        'connect_timeout' => (int) env('GEOGRAPHY_IMPORT_CONNECT_TIMEOUT', 5),
+        'timeout' => (int) env('GEOGRAPHY_IMPORT_TIMEOUT', 30),
+    ],
+
 ];

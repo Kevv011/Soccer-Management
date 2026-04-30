@@ -178,6 +178,20 @@ Adicionalmente:
 - `TeamResource` integra `crest` mediante Media Library
 - `PlayerResource` usa `gender` controlado por enum
 
+### 5.7 Flujo de importacion geografica ya estructurado
+
+Se encuentra definida e iniciada la estructura de importacion para catalogos geograficos:
+
+- configuracion de endpoints remotos en `config/services.php`
+- action para importacion paginada de countries
+- action para importacion paginada de subdivisions
+- jobs separados por entidad
+- command orquestador para ejecucion sincronica o en cola
+
+Objetivo:
+
+- poblar `countries` y `subdivisions` desde endpoints externos paginados preservando la relacion entre ambos catalogos
+
 ## 6. Skills y lineamientos internos del proyecto
 
 La carpeta `.agents/skills` refleja que el proyecto esta orientado a un desarrollo estructurado y con enfoque de calidad.

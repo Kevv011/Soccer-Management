@@ -426,6 +426,13 @@ Avance adicional ya ejecutado:
 - formularios y tablas iniciales de los cinco modulos principales,
 - integracion inicial de Media Library en federaciones y equipos.
 
+Avance adicional en catalogos:
+
+- estructura de importacion remota para countries y subdivisions,
+- command de orquestacion,
+- jobs separados,
+- manejo de paginacion remota por `links.next`.
+
 Las siguientes capas pendientes naturales son:
 
 - validaciones formales,

@@ -30,7 +30,8 @@ class SubdivisionForm
                             TextInput::make('code')
                                 ->required()
                                 ->maxLength(20)
-                                ->uppercase()
+                                ->formatStateUsing(fn(?string $state): ?string => $state ? strtoupper($state) : null)
+                                ->dehydrateStateUsing(fn(?string $state): ?string => $state ? strtoupper($state) : null)
                                 ->rule(function (?Model $record, callable $get) {
                                     return Rule::unique('subdivisions', 'code')
                                         ->where('country_id', $get('country_id'))
