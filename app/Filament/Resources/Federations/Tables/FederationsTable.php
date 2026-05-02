@@ -24,6 +24,10 @@ class FederationsTable
                 TextColumn::make('name')
                     ->searchable()
                     ->sortable(),
+                TextColumn::make('subdivision.country.name')
+                    ->label('Country')
+                    ->searchable()
+                    ->sortable(),
                 TextColumn::make('subdivision.name')
                     ->label('Subdivision')
                     ->searchable()

@@ -30,7 +30,17 @@ class PlayersTable
                     ->sortable(),
                 TextColumn::make('gender')
                     ->badge()
-                    ->formatStateUsing(fn (string $state): string => PlayerGender::options()[$state] ?? $state),
+                    ->formatStateUsing(function (PlayerGender | string | null $state): string {
+                        if ($state instanceof PlayerGender) {
+                            return PlayerGender::options()[$state->value] ?? $state->value;
+                        }
+
+                        if (blank($state)) {
+                            return '-';
+                        }
+
+                        return PlayerGender::options()[$state] ?? $state;
+                    }),
                 TextColumn::make('birth_date')
                     ->date()
                     ->sortable(),

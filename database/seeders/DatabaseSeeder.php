@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Enums\RoleName;
+use App\Models\Subdivision;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -29,5 +30,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $adminUser->syncRoles([RoleName::SuperAdmin->value]);
+
+        if (Subdivision::query()->exists()) {
+            $this->call([
+                FederationTeamPlayerSeeder::class,
+            ]);
+        }
     }
 }
