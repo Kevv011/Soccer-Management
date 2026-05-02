@@ -3,13 +3,17 @@
 namespace App\Providers;
 
 use Carbon\CarbonImmutable;
+use App\Enums\RoleName;
+use App\Policies\PermissionPolicy;
+use App\Policies\RolePolicy;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
-use App\Enums\RoleName;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -54,6 +58,9 @@ class AppServiceProvider extends ServiceProvider
                     ->uncompromised()
                 : null
         );
+
+        Gate::policy(Role::class, RolePolicy::class);
+        Gate::policy(Permission::class, PermissionPolicy::class);
 
         Gate::before(function ($user, string $ability): ?bool {
             return $user->hasRole(RoleName::SuperAdmin->value) ? true : null;

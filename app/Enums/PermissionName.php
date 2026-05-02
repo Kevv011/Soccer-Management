@@ -30,6 +30,16 @@ enum PermissionName: string
     case PlayersCreate = 'players.create';
     case PlayersUpdate = 'players.update';
     case PlayersDelete = 'players.delete';
+    case RolesViewAny = 'roles.view-any';
+    case RolesView = 'roles.view';
+    case RolesCreate = 'roles.create';
+    case RolesUpdate = 'roles.update';
+    case RolesDelete = 'roles.delete';
+    case PermissionsViewAny = 'permissions.view-any';
+    case PermissionsView = 'permissions.view';
+    case PermissionsCreate = 'permissions.create';
+    case PermissionsUpdate = 'permissions.update';
+    case PermissionsDelete = 'permissions.delete';
     case MediaManage = 'media.manage';
 
     /**
