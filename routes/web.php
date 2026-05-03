@@ -10,4 +10,6 @@ Route::get('/', function () {
 Route::middleware(['auth', 'permission:panel.access'])->group(function (): void {
     Route::get('/reports/federations', [ReportController::class, 'index'])
         ->name('reports.federations.index');
+    Route::get('/reports/teams', [ReportController::class, 'teams'])
+        ->name('reports.teams.index');
 });
