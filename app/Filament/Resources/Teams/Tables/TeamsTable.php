@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Teams\Tables;
 
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
@@ -18,7 +19,6 @@ class TeamsTable
             ->columns([
                 SpatieMediaLibraryImageColumn::make('crest')
                     ->collection('crest')
-                    ->conversion('thumb')
                     ->label('Crest')
                     ->square(),
                 TextColumn::make('name')
@@ -40,6 +40,7 @@ class TeamsTable
                     ->preload(),
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
                 DeleteAction::make(),
             ]);

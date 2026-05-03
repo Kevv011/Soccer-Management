@@ -40,6 +40,8 @@ enum PermissionName: string
     case PermissionsCreate = 'permissions.create';
     case PermissionsUpdate = 'permissions.update';
     case PermissionsDelete = 'permissions.delete';
+    case ReportGenerationsViewAny = 'report-generations.view-any';
+    case ReportGenerationsView = 'report-generations.view';
     case MediaManage = 'media.manage';
 
     /**

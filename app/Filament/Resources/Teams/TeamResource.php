@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\Teams;
 
+use App\Filament\Resources\Teams\Infolists\TeamInfolist;
 use App\Filament\Resources\Teams\Pages\CreateTeam;
 use App\Filament\Resources\Teams\Pages\EditTeam;
 use App\Filament\Resources\Teams\Pages\ListTeams;
+use App\Filament\Resources\Teams\Pages\ViewTeam;
 use App\Filament\Resources\Teams\Schemas\TeamForm;
 use App\Filament\Resources\Teams\Tables\TeamsTable;
 use App\Models\Team;
@@ -33,6 +35,11 @@ class TeamResource extends Resource
         return TeamForm::configure($schema);
     }
 
+    public static function infolist(Schema $schema): Schema
+    {
+        return TeamInfolist::configure($schema);
+    }
+
     public static function table(Table $table): Table
     {
         return TeamsTable::configure($table);
@@ -43,6 +50,7 @@ class TeamResource extends Resource
         return [
             'index' => ListTeams::route('/'),
             'create' => CreateTeam::route('/create'),
+            'view' => ViewTeam::route('/{record}'),
             'edit' => EditTeam::route('/{record}/edit'),
         ];
     }

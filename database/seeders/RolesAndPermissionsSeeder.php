@@ -47,6 +47,8 @@ class RolesAndPermissionsSeeder extends Seeder
             PermissionName::PlayersView->value,
             PermissionName::PlayersCreate->value,
             PermissionName::PlayersUpdate->value,
+            PermissionName::ReportGenerationsViewAny->value,
+            PermissionName::ReportGenerationsView->value,
             PermissionName::MediaManage->value,
         ]);
         $viewerRole->syncPermissions([
@@ -61,6 +63,8 @@ class RolesAndPermissionsSeeder extends Seeder
             PermissionName::TeamsView->value,
             PermissionName::PlayersViewAny->value,
             PermissionName::PlayersView->value,
+            PermissionName::ReportGenerationsViewAny->value,
+            PermissionName::ReportGenerationsView->value,
         ]);
 
         app(PermissionRegistrar::class)->forgetCachedPermissions();

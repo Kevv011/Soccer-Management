@@ -9,6 +9,7 @@ use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Filament\Panel;
@@ -70,6 +71,14 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasMedia
     public function getFilamentAvatarUrl(): ?string
     {
         return $this->getFirstMediaUrl('avatar', 'thumb') ?: null;
+    }
+
+    /**
+     * @return HasMany<ReportGeneration, $this>
+     */
+    public function reportGenerations(): HasMany
+    {
+        return $this->hasMany(ReportGeneration::class);
     }
 
     public function canAccessPanel(Panel $panel): bool

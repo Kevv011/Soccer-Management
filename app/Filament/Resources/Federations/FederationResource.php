@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\Federations;
 
+use App\Filament\Resources\Federations\Infolists\FederationInfolist;
 use App\Filament\Resources\Federations\Pages\CreateFederation;
 use App\Filament\Resources\Federations\Pages\EditFederation;
 use App\Filament\Resources\Federations\Pages\ListFederations;
+use App\Filament\Resources\Federations\Pages\ViewFederation;
 use App\Filament\Resources\Federations\Schemas\FederationForm;
 use App\Filament\Resources\Federations\Tables\FederationsTable;
 use App\Models\Federation;
@@ -33,6 +35,11 @@ class FederationResource extends Resource
         return FederationForm::configure($schema);
     }
 
+    public static function infolist(Schema $schema): Schema
+    {
+        return FederationInfolist::configure($schema);
+    }
+
     public static function table(Table $table): Table
     {
         return FederationsTable::configure($table);
@@ -43,6 +50,7 @@ class FederationResource extends Resource
         return [
             'index' => ListFederations::route('/'),
             'create' => CreateFederation::route('/create'),
+            'view' => ViewFederation::route('/{record}'),
             'edit' => EditFederation::route('/{record}/edit'),
         ];
     }

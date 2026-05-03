@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Players\Tables;
 use App\Enums\PlayerGender;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
@@ -60,6 +61,7 @@ class PlayersTable
                     )),
             ])
             ->recordActions([
+                ViewAction::make(),
                 EditAction::make(),
                 DeleteAction::make(),
             ]);
