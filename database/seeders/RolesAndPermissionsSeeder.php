@@ -22,6 +22,8 @@ class RolesAndPermissionsSeeder extends Seeder
             Permission::findOrCreate($permissionName, 'web');
         }
 
+        app(PermissionRegistrar::class)->forgetCachedPermissions();
+
         $superAdminRole = Role::findOrCreate(RoleName::SuperAdmin->value, 'web');
         $panelAdminRole = Role::findOrCreate(RoleName::PanelAdmin->value, 'web');
         $federationAdminRole = Role::findOrCreate(RoleName::FederationAdmin->value, 'web');
